@@ -1501,8 +1501,8 @@
                             <h3>AI/ML Engineer</h3>
                             <p style="color: var(--text-muted); margin-top: 0.5rem;">Punjab University Graduate</p>
                             <div style="margin-top: 1rem;">
-                                <span class="tag">TensorFlow</span>
-                                <span class="tag">Python</span>
+                                <span class="tag">Agentic AI</span>
+                                <span class="tag">Generative AI</span>
                                 <span class="tag">AI/ML</span>
                             </div>
                         </div>
@@ -1903,14 +1903,15 @@
                     <div class="contact-icon">📧</div>
                     <h3>Email</h3>
                     <p style="color: var(--text-muted); word-break: break-all;">hashmiobaiduddin@gmail.com</p>
-                    <a href="mailto:hashmiobaiduddin@gmail.com" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 10px 20px;">Send Email</a>
+                    <a id="emailBtn" href="https://mail.google.com/mail/?view=cm&fs=1&to=hashmiobaiduddin@gmail.com&su=Connect%20with%20Obaid&body=I%20would%20like%20to%20connect%20with%20you." class="btn btn-primary" target="_blank"
+                    rel="noopener noreferrer" style="margin-top: 1rem; font-size: 0.9rem; padding: 10px 20px;">Send Email</a>
                 </div>
                 
                 <div class="contact-card scroll-reveal stagger-2 hover-tilt magnetic">
                     <div class="contact-icon">📱</div>
                     <h3>Phone</h3>
                     <p style="color: var(--text-muted);">+92 3040256240</p>
-                    <a href="tel:+923349866901" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 10px 20px;">Call Now</a>
+                    <a href="tel:+923040256240" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 10px 20px;">Call Now</a>
                 </div>
                 
                 <div class="contact-card scroll-reveal stagger-3 hover-tilt magnetic">
@@ -1936,7 +1937,8 @@
                     I specialize in developing intelligent AI solutions that drive real business value. From concept to deployment, let's build something amazing together.
                 </p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="mailto:hashmiobaiduddin@gmail.com" class="btn btn-primary magnetic">Discuss Your Project</a>
+                    <a id="discussBtn" href="https://mail.google.com/mail/?view=cm&fs=1&to=hashmiobaiduddin@gmail.com&su=Discuss%20a%20Project&body=I%20want%20to%20discuss%20a%20project." class="btn btn-primary"
+                    rel="noopener noreferrer" class="btn btn-primary magnetic">Discuss Your Project</a>
                     <a href="#projects" class="btn btn-secondary magnetic">View My Work</a>
                 </div>
             </div>
@@ -1987,6 +1989,23 @@
             // Initialize magnetic effects
             initMagneticEffects();
         }
+        document.getElementById("emailBtn").addEventListener("click", function () {
+            this.textContent = "Email Sent ✅";
+        });
+        const discussBtn = document.getElementById("discussBtn");
+
+        discussBtn.addEventListener("click", () => {
+            // Save original text
+            let originalText = discussBtn.textContent;
+
+            // Change text after click
+            discussBtn.textContent = "Opening Email...";
+
+            // Restore original text after 5 seconds
+            setTimeout(() => {
+            discussBtn.textContent = originalText;
+            }, 5000);
+        });
 
         // Enhanced Typing Effect
         function typeWriter(element, text, speed = 100) {
